@@ -13,7 +13,6 @@
 */
 
 
-
 function calculateGrade(studentScore) {
     let studentGrade = ""
     switch (true) {
@@ -26,7 +25,7 @@ function calculateGrade(studentScore) {
         case (studentScore >= 50 && studentScore < 75):
             studentGrade = "Grade B";
             break;    
-        case (studentScore >= 75 && studentScore < 100):
+        case (studentScore >= 75 && studentScore <= 100):
             studentGrade = "Grade A";
             break;  
         default:
@@ -35,5 +34,7 @@ function calculateGrade(studentScore) {
     }
     return studentGrade
 }
-
-console.log(calculateGrade(studentScore))
+const prompt = require('prompt-sync')();
+let studentScore=prompt("Please enter student's score : ")
+console.log("Student's score is "+studentScore)
+console.log("Student's Grade is "+ calculateGrade(studentScore))
