@@ -36,6 +36,4 @@ function calculateGrade(studentScore) {
     return studentGrade
 }
 
-let studentScore =prompt("Please enter student's score : ")
-
 console.log(calculateGrade(studentScore))
