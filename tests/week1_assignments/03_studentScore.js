@@ -29,12 +29,12 @@ function calculateGrade(studentScore) {
             studentGrade = "Grade A";
             break;  
         default:
-            studentGrade = "This is not a valid score for student. The student's score should be from 0 to 100";
+            studentGrade = "Student's score is not valid. Make sure student's score should be from 0 to 100";
             break;
     }
     return studentGrade
 }
 const prompt = require('prompt-sync')();
 let studentScore=prompt("Please enter student's score : ")
-console.log("Student's score is "+studentScore)
-console.log("Student's Grade is "+ calculateGrade(studentScore))
+console.log("Student's score is : "+studentScore)
+console.log("Student's Grade is : "+ calculateGrade(studentScore))
