@@ -54,12 +54,36 @@ console.log("Length of the last word '"+splitString2[splitString2.length-1]+"'of
 //Example 3:
 
 console.log("Example 3: ")
-let a = "silent"
-let charMap ={}
-console.log(arrObj)
-console.log(Object.keys(charMap))
 
+let str1 = "silent"
+let str2 = "listen"
 
+isAnagram(str1,str2)
 
+function isAnagram(str1,str2)
+{
+let splitStr1=str1.split('')
+console.log(splitStr1)
+let splitStr2=str2.split('')
+console.log(splitStr2)
+
+let sortsplitStr1=splitStr1.sort()
+console.log(sortsplitStr1)
+
+let sortsplitStr2=splitStr2.sort()
+console.log(sortsplitStr2)
+
+let joinstr1 = sortsplitStr1.join('')
+console.log(joinstr1)
+
+let joinstr2 = sortsplitStr2.join('')
+console.log(joinstr2)
+    if (joinstr1===joinstr2) {
+        console.log("Both strings are anagram")
+        
+    } else {
+        console.log("Both strings are not anagram")
+    }
+}
 
 
