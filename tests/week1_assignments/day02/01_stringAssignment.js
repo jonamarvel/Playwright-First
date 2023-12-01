@@ -28,7 +28,7 @@ Write a function to check if two strings are anagrams.
 //Example 1 :
 let givenString1= "Hello World"
 let totalLenght=givenString1.length
-console.log('Example 1 :')
+console.log('\nExample 1 :')
 console.log('Given String : '+givenString1)
 let splitString1 = givenString1.split(' ')
 //console.log(splitString1)
@@ -40,7 +40,7 @@ console.log("Length of the last word '"+splitString1[splitString1.length-1]+"' o
 //Example 2:
 let givenString2= "   fly me   to   the moon  "
 let totalLenght2=givenString2.length
-console.log('Example 2 :')
+console.log('\nExample 2 :')
 console.log('Given String : '+givenString2)
 let trimString2=givenString2.trim()
 console.log('Trim of Given String : '+trimString2)
@@ -53,31 +53,31 @@ console.log("Length of the last word '"+splitString2[splitString2.length-1]+"'of
 
 //Example 3:
 
-console.log("Example 3: ")
+console.log("\nExample 3: ")
 
 let str1 = "silent"
 let str2 = "listen"
-
+console.log("Given Strings are \n"+str1+"\n"+str2)
 isAnagram(str1,str2)
 
 function isAnagram(str1,str2)
 {
 let splitStr1=str1.split('')
-console.log(splitStr1)
+//console.log(splitStr1)
 let splitStr2=str2.split('')
-console.log(splitStr2)
+//console.log(splitStr2)
 
 let sortsplitStr1=splitStr1.sort()
-console.log(sortsplitStr1)
+//console.log(sortsplitStr1)
 
 let sortsplitStr2=splitStr2.sort()
-console.log(sortsplitStr2)
+//console.log(sortsplitStr2)
 
 let joinstr1 = sortsplitStr1.join('')
-console.log(joinstr1)
+//console.log(joinstr1)
 
 let joinstr2 = sortsplitStr2.join('')
-console.log(joinstr2)
+//console.log(joinstr2)
     if (joinstr1===joinstr2) {
         console.log("Both strings are anagram")
         

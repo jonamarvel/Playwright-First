@@ -16,10 +16,10 @@
 */
 
 function checkNumberType(givenNumber) {
-    if (givenNumber>0) {
+    if (givenNumber > 0) {
         console.log("Given number " +givenNumber+ " is greater than 0")
         
-    } else if (givenNumber<0) {
+    } else if (givenNumber < 0) {
         console.log("Given number " +givenNumber+ " is less than 0")
     }
     else
