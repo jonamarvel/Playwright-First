@@ -14,7 +14,6 @@ Assignment: 1 Create Lead
 import {chromium,expect,test } from "@playwright/test";
 
 test ("To verify Lead Creation",async () => {
-
 //To create the browser instance
 const browser = await chromium.launch();
 //To create browser context
@@ -27,12 +26,12 @@ await page.locator("#username").fill('jonamarvel@testleaf.com');
 await page.locator("#password").fill("Testleaf123");
 await page.locator("#Login").click();
 //To Click on toggle menu button from the left corner
-await page.waitForLoadState('load');
+//await page.waitForLoadState('load');
+await page.waitForLoadState('domcontentloaded');
 await page.getByRole('button',{name : 'App Launcher'}).click();
 //To Click view All and click Sales from App Launcher
 await page.waitForLoadState('load');
 await page.locator("text=View All").click();
-await page.waitForLoadState('load');
 await page.waitForLoadState('load');
 await page.getByRole('link',{name : 'Sales'}).click();
 //await page.getByText('Sales').click()
@@ -42,18 +41,17 @@ await page.getByRole('link', {name: 'Leads' }).click();
 await page.waitForLoadState('load');
 //To Click on New button
 await page.getByRole('button',{name: 'New'}).click();
-
-
-
 //To Select Salutation dropdown
-await page.getByRole('button',{name : 'salutation'}).click();
-//selectOption({label : 'Mrs.'});
+//const dd = page.locator(".slds-combobox__input slds-input_faux slds-combobox__input-value").nth(0);
+//await dd.click();
+const dd = await page.locator("button[name='salutation']").click();
+//await page.waitForTimeout(2000);
 //To Enter the Last Name
 await page.getByPlaceholder('Last Name').fill("Marvel");
 //To Enter the CompanyName 
 await page.locator("[name='Company']").fill("XYZ Company");
 //To Click Save and Verify Leads name created
-await page.locator("[name='Save Edit']").click();
+await page.locator(".slds-button slds-button_brand").click();
 const title = await page.title();
 console.log("\nPage Title is : "+title);
 console.log(expect(title).toContain('| Lead | Salesforce'));
