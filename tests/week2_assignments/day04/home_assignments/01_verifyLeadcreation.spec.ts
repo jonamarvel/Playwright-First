@@ -29,25 +29,25 @@ await page.locator("#Login").click();
 //To Click on toggle menu button from the left corner
 await page.waitForLoadState('load');
 await page.getByRole('button',{name : 'App Launcher'}).click();
-
 //To Click view All and click Sales from App Launcher
 await page.waitForLoadState('load');
 await page.locator("text=View All").click();
-
 await page.waitForLoadState('load');
-/* const lo = page.getByText('Sales');
-console.log(lo); */
 await page.waitForLoadState('load');
 await page.getByRole('link',{name : 'Sales'}).click();
+//await page.getByText('Sales').click()
 await page.waitForLoadState('load');
 //To Click on Leads tab 
 await page.getByRole('link', {name: 'Leads' }).click();
 await page.waitForLoadState('load');
-
 //To Click on New button
 await page.getByRole('button',{name: 'New'}).click();
+
+
+
 //To Select Salutation dropdown
-await page.getByRole('button',{name : 'Salutation'}).selectOption({label : 'Mrs.'});
+await page.getByRole('button',{name : 'salutation'}).click();
+//selectOption({label : 'Mrs.'});
 //To Enter the Last Name
 await page.getByPlaceholder('Last Name').fill("Marvel");
 //To Enter the CompanyName 
