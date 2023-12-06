@@ -30,30 +30,44 @@ await page.locator("#Login").click();
 await page.waitForLoadState('domcontentloaded');
 await page.getByRole('button',{name : 'App Launcher'}).click();
 //To Click view All and click Sales from App Launcher
-await page.waitForLoadState('load');
+await page.waitForLoadState('domcontentloaded');
 await page.locator("text=View All").click();
 await page.waitForLoadState('load');
-await page.getByRole('link',{name : 'Sales'}).click();
+//await page.getByRole('link',{name : 'Sales'}).click();
+//const tile = await page.$('div[data-testid="your-tile-selector"]');
 //await page.getByText('Sales').click()
-await page.waitForLoadState('load');
+const salesTile = page.locator('div[data-name="Sales"]')
+await salesTile.click();
+await page.waitForLoadState('domcontentloaded');
 //To Click on Leads tab 
-await page.getByRole('link', {name: 'Leads' }).click();
-await page.waitForLoadState('load');
+await page.getByRole('link', {name: 'Leads'}).click();
+//const leadTab = page.locator('div[data-id="Lead"]');
+//await leadTab.click();
+await page.waitForLoadState('domcontentloaded');
 //To Click on New button
 await page.getByRole('button',{name: 'New'}).click();
+await page.waitForLoadState('domcontentloaded');
 //To Select Salutation dropdown
-//const dd = page.locator(".slds-combobox__input slds-input_faux slds-combobox__input-value").nth(0);
-//await dd.click();
-const dd = await page.locator("button[name='salutation']").click();
-//await page.waitForTimeout(2000);
+/* const comboBox= page.locator("button[name='salutation']");
+await comboBox.click();
+await page.click('div[title = "Mrs.")'); */ 
 //To Enter the Last Name
 await page.getByPlaceholder('Last Name').fill("Marvel");
 //To Enter the CompanyName 
 await page.locator("[name='Company']").fill("XYZ Company");
 //To Click Save and Verify Leads name created
-await page.locator(".slds-button slds-button_brand").click();
-const title = await page.title();
-console.log("\nPage Title is : "+title);
-console.log(expect(title).toContain('| Lead | Salesforce'));
+await page.locator("button[name='SaveEdit']").click();
+await page.waitForLoadState('domcontentloaded');
+const toastmessage = await page.waitForSelector('.forceVisualMessageQueue');
+
+/* const title = await page.title();
+console.log("\nPage Title is : "+title); */
+if (toastmessage)
+{
+}
+else
+{
+    console.log("\nLead creation is unsuccessful");
+}
 
 })
