@@ -22,7 +22,7 @@ test("To create a new lead", async () => {
     await page.click("text=CRM/SFA");
 
     //To get th(e innertext
-    console.log(await page.getByText("CRM/SFFA").innerText());
+    console.log(await page.getByText("CRM/SFA").innerText());
 
     //To click leads
     //await page.locator('text=Leads').click();

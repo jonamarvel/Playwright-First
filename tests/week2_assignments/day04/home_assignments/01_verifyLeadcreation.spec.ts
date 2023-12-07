@@ -13,7 +13,7 @@ Assignment: 1 Create Lead
 
 import {chromium,expect,test } from "@playwright/test";
 
-test ("To verify Lead Creation",async () => {
+test ("Salesforce : To verify Lead Creation",async () => {
 //To create the browser instance
 const browser = await chromium.launch();
 //To create browser context
@@ -48,9 +48,9 @@ await page.waitForLoadState('domcontentloaded');
 await page.getByRole('button',{name: 'New'}).click();
 await page.waitForLoadState('domcontentloaded');
 //To Select Salutation dropdown
-/* const comboBox= page.locator("button[name='salutation']");
+const comboBox= page.locator("button[name='salutation']");
 await comboBox.click();
-await page.click('div[title = "Mrs.")'); */ 
+await page.getByTitle('Mrs.').click(); 
 //To Enter the Last Name
 await page.getByPlaceholder('Last Name').fill("Marvel");
 //To Enter the CompanyName 
@@ -64,6 +64,7 @@ const toastmessage = await page.waitForSelector('.forceVisualMessageQueue');
 console.log("\nPage Title is : "+title); */
 if (toastmessage)
 {
+    console.log("\nLead creation is successful, Toast message is : " + await toastmessage.textContent());
 }
 else
 {
