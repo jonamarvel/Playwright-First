@@ -11,7 +11,7 @@ Assignment: 1 Create Lead
 9. Click Save and Verify Leads name created
 */
 
-import {chromium,expect,test } from "@playwright/test";
+import {chromium,test } from "@playwright/test";
 
 test ("Salesforce : To verify Lead Creation",async () => {
 //To create the browser instance
@@ -33,9 +33,6 @@ await page.getByRole('button',{name : 'App Launcher'}).click();
 await page.waitForLoadState('domcontentloaded');
 await page.locator("text=View All").click();
 await page.waitForLoadState('load');
-//await page.getByRole('link',{name : 'Sales'}).click();
-//const tile = await page.$('div[data-testid="your-tile-selector"]');
-//await page.getByText('Sales').click()
 const salesTile = page.locator('div[data-name="Sales"]')
 await salesTile.click();
 await page.waitForLoadState('domcontentloaded');
@@ -60,8 +57,6 @@ await page.locator("button[name='SaveEdit']").click();
 await page.waitForLoadState('domcontentloaded');
 const toastmessage = await page.waitForSelector('.forceVisualMessageQueue');
 
-/* const title = await page.title();
-console.log("\nPage Title is : "+title); */
 if (toastmessage)
 {
     console.log("\nLead creation is successful, Toast message is : " + await toastmessage.textContent());

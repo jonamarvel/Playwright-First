@@ -37,6 +37,7 @@ test ("To login into Salesforce",async () => {
 
     //To load page to be loaded completly then we can interact with Web elements
     await page.waitForLoadState('load');
+    
     //To print the page title
     const title = await page.title()
         console.log("Page Title is : "+title);
