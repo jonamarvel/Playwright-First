@@ -39,7 +39,7 @@ test("To create a new lead", async () => {
     await page.locator('.decorativeSubmit').click();
 
     //Get the text of CRM/SFA and click the CRM/SFA using getByText
-    const crmsfa = await page.getByText("CRM/SFA");
+    const crmsfa = page.getByText("CRM/SFA");
     console.log("CRM/SFA " + await crmsfa.innerText());
     await crmsfa.click();
 

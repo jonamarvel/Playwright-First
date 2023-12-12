@@ -47,7 +47,7 @@ console.log(`\nThe browser name is ${browser1}`);
 let isTsInteresting = true;
 console.log(`\nisTsInteresting is ${isTsInteresting}`);
 
-let varName: undefined; //not defining
+let varName: undefined; //not defining --> It represents a variable that has not been initialized
 console.log(`\nvarName is ${varName}`);
 
 let isSecured: null = null; //defining with empty value
