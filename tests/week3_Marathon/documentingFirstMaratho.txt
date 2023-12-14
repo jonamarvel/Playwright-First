@@ -1,0 +1,81 @@
+/* 
+
+# Test Scenario (Sequence of real-time user behavior of Salesforce) 
+
+1. Create a Lead in Salesforce and convert into Opportunity.
+
+2. Create a Chatter and linking the Lead, Contact, Account.
+
+
+Inputs:
+
+1) Test Scenario - Steps document (with clear action and expected result)
+2) Capture video to supplement the document steps
+
+
+Best Practices :
+1. Always manually excute the given test scenario before doing anything and confirm that you understand functionality.
+
+2. While you understand the functionality also document the best selectors/locators.
+    a)id(#id)
+    b) name ([name = 'value])
+    c) class([.class]) //unique, multiple occurance --> If it is 1 or 2 --> first()
+/nth()
+    d)  attribute([attr='value]) // unique
+    e) css selector / xpath
+
+dont know -> write down and reach out
+
+3. While you manually navigate -> write down the methods (fill, click)
+
+4. Start developing your test scripts in VS code
+    a) Proper comment(copy the test step)
+    b) Proper naming convention for your logs and variable naming conventions
+    c) Try to avoid using sleep / setTimeout(ask for help - if the code is not working)
+    d) do not code everything at once. stop and execute every five or six steps
+
+5. Debugging your testscript
+    a) run the test script in debug mode (npx playwright test filename.spec.ts --debug)
+    b) user step over function to navigate to every line of code
+    c) if anything fails, understand the error message and then debug yourself
+    d) ask your mentor for help
+
+6. Continut to code the next 5-6 steps and continue to debug
+7. Once all looks good, just run them on different browsers.
+8. Whenever you learning something new(from mistakes), document those and share it!
+
+*/
+
+Test scenario : Create a Lead in Salesforce and convert the lead into Opportunity
+
+Credentials :
+User Name : jonamarvel@testleaf.com
+Password : Testleaf123
+
+Steps and execution
+1. Launch the browser
+2. Open Salesforce login page
+3. Enter user name and password
+4. Click login
+5. Click Applauncher
+6. Click ViewAll -> [aria-label="View All Applications"]
+7. Go to Search box and type 'Marketing' getbyPlaceholder('Search apps or items...')
+8. Click Enter
+9. Click Marketing tile -> .slds-app-launcher__tile-body slds-truncate
+10. Click on Leads Tab -> a[title="Leads"]
+11. Click on New -> button[class="slds-button slds-button_neutral middleButton actionListButton"]
+12. Enter Salutation
+13. Enter First Name
+14. Enter Last Name
+15. Enter Company
+16. Click Save
+17. Verify Lead got created
+18. Click on action drop down icon
+19. Click on convert
+20. Go ot Opportunity section
+21. Enter Opportunity Name
+22. Click on Convert
+23. Verify Lead has been created page is launched
+24. Click on Opportunity hyperlink
+25. Verify Opportunity is created
+
