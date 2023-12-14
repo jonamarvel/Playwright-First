@@ -50,10 +50,13 @@ test("Salesforce : To create a new account and assign ownership", async ({ page 
         await page.locator('span[title="Public"]').click();
         //Click save and verify Account name 
         await page.locator('button[name="SaveEdit"]').click();
-        const toastMessage = await page.locator('div[aria-label="Success"]').innerText();
-        const accountName = await page.locator('span[class="toastMessage slds-text-heading--small forceActionsText"] a[class="forceActionLink"]').innerText();
+
+        //const toastMessage = await page.locator('div[aria-label="Success"]').innerText();
+        const toastMessage = await page.locator("div[id*='toastDescription']").innerText();
+        //const accountName = await page.locator('span[class="toastMessage slds-text-heading--small forceActionsText"] a[class="forceActionLink"]').innerText();
+        const accountName = await page.locator("div[title='Jona Marvel']").innerText();
         console.log(toastMessage);
         console.log(`\nYour account name is : ${accountName}`);
-        console.log(expect(accountName).toBe('Jona Marvel'));
+        expect(accountName).toBe('Jona Marvel');
         //console.log(expect(accountName).toBe('Jona Marvel Nayagam'));
 })

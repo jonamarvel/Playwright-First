@@ -45,10 +45,9 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    } 
-
+    } ,
         
- /*    
+    /*    
     {
       name: 'Salesforce Lead Creation Testcases',
       testMatch:'01_verifyLeadcreation.spec.ts',
@@ -74,7 +73,8 @@ export default defineConfig({
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
-    }, */
+    },
+    */
 
     /* Test against mobile viewports. */
     // {
