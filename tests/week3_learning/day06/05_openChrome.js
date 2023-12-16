@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var OpenChrome = /** @class */ (function () {
     function OpenChrome() {
         //browserName: string;
+        this.undefVariable = undefined;
         this.browserName = 'chrome';
     }
     OpenChrome.prototype.startApp = function () {
@@ -18,6 +19,7 @@ var OpenChrome = /** @class */ (function () {
 }());
 var myChrome = new OpenChrome();
 console.log(myChrome.browserName);
+console.log(myChrome.undefVariable);
 myChrome.startApp();
 console.log(myChrome.loginCredentials('Demosalesmanager', 'crmsfa'));
 console.log(myChrome.getStatus());
