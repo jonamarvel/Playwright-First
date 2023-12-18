@@ -87,8 +87,9 @@ test("To Merge Contacts in LeafTaps application using sequential promise and ale
     await page.locator("//a[text()='Merge']").click();
     //To wait for sometime
     await page.waitForEvent('load');
+    await page.waitForTimeout(3000);
     //To Verify the title of the page
     const title = await page.title();
     console.log(`\nPage Title is : ${title}`);
-    
+    await page.waitForTimeout(5000);
 })
