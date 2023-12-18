@@ -62,13 +62,6 @@ test("To Merge Contacts in LeafTaps application using sequential promise and ale
     const toContact = await toContactPromise;
     //To Click on Second Resulting Contact
     await toContact.locator('a[class="linktext"]').nth(4).click(); 
-
-    /* 
-    const [contactLookups] = await Promise.all([
-        contactPromise = context.waitForEvent("page"),
-        await page.locator('img[alt="Lookup"]').first().click(),
-
-    ]) */
     //To wait for sometime
     await page.waitForTimeout(3000);
     //To create event listener of alert box before clicking on Merge button
