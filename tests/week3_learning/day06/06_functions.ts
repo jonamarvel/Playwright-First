@@ -45,17 +45,23 @@ allow a single function to have mutiple signature
 */
 
 //Function Overload
-function calculateArea(shape: "rectangle", width:number , height:number): number;
+function calculateArea(shape: "rectangle", width:number , height:number): number; // 3 arguments
 function calculateArea(shape: "circle", radius:number): number;
+function calculateArea(shape: "square", width:number): number; // 2 arguments -> width : number
+//function calculateArea(shape: "square", width:string): number; // 2 arguments -> width : string
+
 
 //Function Implementation
-function calculateArea(shape: "rectangle"|"circle", widthOrRadius: number, height?: any): number{
+function calculateArea(shape: "rectangle"|"circle"|"square", widthOrRadius: number, height?: any): number{
     if (shape === "rectangle") {
         return widthOrRadius * height;
         
     }
-    else {
+    else if(shape === "circle") {
         return Math.PI * Math.pow(widthOrRadius,2);
+    }
+    else if(height == undefined){
+        return widthOrRadius*widthOrRadius;
     }
 }
 
