@@ -39,7 +39,7 @@ test ("To Handle frames using frame locators",async ({page}) => {
     //Locating the first frame
     const frameLocator = page.frameLocator('iframe').first();
 
-    frameLocator.locator("#Click").click();
+    await frameLocator.locator("#Click").click();
 
     const card = page.locator('.card').filter({hasText: " Click Me (Inside Nested frame)"});
     //const card = page.getByText(" Click Me (Inside Nested frame)"); //Not working
