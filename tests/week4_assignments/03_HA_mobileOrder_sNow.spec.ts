@@ -55,10 +55,9 @@ test("Service Now : To order a Mobile" ,async ({page}) => {
     // To Choose yes option in lost or broken iPhone using frame object
     const frameObj1 = page.frame({name : "gsft_main" });
     await frameObj1?.locator('label[class="radio-label"]').first().click();
-    const phoneNumber = frameObj1?.locator("input[class*='sc-content-pad form-control']");
-    console.log(phoneNumber);
     const phoneNumberQuestion = await frameObj1?.getByRole('heading', { name: ' What was the original phone number?'}).innerText();
     console.log(phoneNumberQuestion);
+    expect(phoneNumberQuestion).toBe("What was the original phone number?");
     //To Enter phonenumber as 99 in original phonenumber field
     await frameObj1?.locator("input[class*='sc-content-pad form-control']").fill("9944181340");
     //To Select Unlimited from the dropdown in Monthly data allowance
