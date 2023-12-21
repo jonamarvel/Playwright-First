@@ -46,7 +46,7 @@ test.only("To test multiple Tabs",async ({page,context}) => {
 
     //To declare all promises as an array when we have multiple promises to get resolved
 
-    //[newPage] This is called Destructuring
+    //[multiplePage] This is called Destructuring
    const [multiplePage] = await Promise.all([
         context.waitForEvent("page"),
         page.getByText("Open Multiple", {exact: true}).click(),
