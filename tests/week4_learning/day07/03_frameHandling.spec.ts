@@ -1,5 +1,6 @@
 import {test, chromium} from "@playwright/test";
 
+//First approach using Frame Objects
 /* 
 test ("To Handle frames using Frame Object",async ({page}) => {
     await page.goto("https://leafground.com/frame.xhtml");
@@ -49,3 +50,8 @@ test ("To Handle frames using frame locators",async ({page}) => {
 
     await page.waitForTimeout(6000);
 })
+
+
+
+
+

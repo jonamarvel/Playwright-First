@@ -1,0 +1,27 @@
+Objective: Get eveeryone with Playwright Typescript in UI and API Automation (Salesforce)
+
+2 End to End Scenario: (CRUD)
+
+#1) Create Dashboard through UI + Verify the data is created using API by editing and deleting those records !!
+#2) Create test data using leads API + Search, Update and delete the same lead record 
+
+Inputs:
+
+1) Steps to perform an action (UI)
+2) API Documentation (Spec / Contract)
+
+Best Practices:
+
+1) Understand the scenario (Manually Test - Browser + PostMan)
+2) Locators (UI) : id, css (relative locators) / xpath
+3) Actions (fill, click, ...)
+4) a) End point b) Headers c) Body Paramters d) Send request (Get/Post/Delete) e) Verify the response
+5) Verify response
+   a) status code (200 / 201 / 204) .. 
+   b) time (assert the response time within 2 seconds)
+   c) validate the response structure (specific key)
+   d) store them in your constants 
+6) Start building the tests (functions - createDashboard, updateDashboardApi, deleteDashboardApi)
+7) Test them in debug mode (in playwright with inspector) for a single data
+8) Run them for different data / browser 
+9) Document those learnings for your reference
