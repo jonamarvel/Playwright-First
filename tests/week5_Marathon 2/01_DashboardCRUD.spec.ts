@@ -1,5 +1,5 @@
 import { test,chromium, expect } from "@playwright/test";
-import loginData from "../../tests/testdata/SFLoginInfo.json";
+import loginData from "../testdata/SFLoginInfo.json";
 import { getAccessToken } from "../week5_learning/day10/authHelper.spec";
 
 test("Salesforce : To create a Dahboard from Playwright",async ({page}) => {
@@ -35,6 +35,7 @@ test("Salesforce : To create a Dahboard from Playwright",async ({page}) => {
     await newDashboardButton.click();
 
     //To fill Dashboard name and description using frame locators
+
     const frameLocator = page.frameLocator("iframe").last();
     await frameLocator.locator("#dashboardNameInput").fill("Salesforce Automation by Jona");
     await frameLocator.locator("#dashboardDescriptionInput").fill("Testing - Created using playwright code");
