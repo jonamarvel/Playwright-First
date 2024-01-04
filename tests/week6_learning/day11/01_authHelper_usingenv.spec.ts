@@ -1,6 +1,8 @@
 import { test, chromium } from "@playwright/test";
 import env from 'dotenv';
-env.config();
+env.config({
+    path: "test.env"
+});
 
 async function getSFAccessToken() {
     

@@ -1,0 +1,10 @@
+{
+    "stage":{
+        "adminUserName":"jonamarvel@testleaf.com",
+        "adminPassword": "Testleaf123"
+    },
+    "beta":{
+        "adminUserName":"hari.radhakrishnan@qeagle.com",
+        "adminPassword": "Testleaf@1234"
+    }
+}

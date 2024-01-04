@@ -12,7 +12,6 @@ const records = parse(fs.readFileSync(path.join(__dirname, "SFloginData.csv")),
 
 for (const record of records)
 {
-
 test(`Salesforce : Reading the data from csv file - Login from ${record.test_case}`,async () => {
     const userDataDir = './myUserDataDir'
     const context = await chromium.launchPersistentContext(userDataDir, {
