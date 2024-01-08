@@ -1,4 +1,4 @@
-import { test,chromium, expect } from "@playwright/test";
+import { test,expect } from "@playwright/test";
 import loginData from "../testdata/SFLoginInfo.json";
 import { getAccessToken } from "../week5_learning/day10/authHelper.spec";
 

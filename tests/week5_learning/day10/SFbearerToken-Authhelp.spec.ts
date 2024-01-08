@@ -1,4 +1,4 @@
-import { test,chromium, expect } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import { getAccessToken } from "./authHelper.spec";
 
 let accessToken: string;
