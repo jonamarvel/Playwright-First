@@ -1,4 +1,4 @@
-import { test, chromium, expect} from "@playwright/test";
+import { test, expect} from "@playwright/test";
 import path from "path";
 
 test("File Upload : Scenrio 1 - type = file",async ({page}) => {

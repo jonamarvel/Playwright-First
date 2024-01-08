@@ -1,4 +1,4 @@
-import { test, chromium } from "@playwright/test";
+import { chromium } from "@playwright/test";
 
 async function getAccessToken() {
     

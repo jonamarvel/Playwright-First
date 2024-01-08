@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from "csv-parse/sync";
 
-const records = parse(fs.readFileSync(path.join(__dirname, "leafTapsloginData.csv")),
+const records = parse(fs.readFileSync(path.join(__dirname, "LeafTapsloginData.csv")),
 {
     columns : true, // This will treat the first row in the csv file as column names
     skip_empty_lines : true,

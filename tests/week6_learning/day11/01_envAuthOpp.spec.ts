@@ -1,4 +1,4 @@
-import { test,chromium, expect } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import { getSFAccessToken } from "./01_authHelper_usingenv.spec";
 
 let accessToken: string;

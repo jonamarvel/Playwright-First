@@ -7,7 +7,7 @@ Homework: Window
     Verify and validate the title, url of the page
  */
 
-import {chromium, test} from "@playwright/test";
+import {test} from "@playwright/test";
 
 test ("To handle multiple windows using Promise All",async ({page, context}) => {
 

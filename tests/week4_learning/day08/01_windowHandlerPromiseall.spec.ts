@@ -1,6 +1,5 @@
 
 import { test, chromium, expect, Page } from "@playwright/test";
-import { title } from "process";
 
 //include both page and context fixtures
 test("To handle windows using Promise",async ({page,context}) => {
