@@ -19,6 +19,7 @@ test ("To Handle frames and Alerts in w3Schools website",async ({page}) => {
         console.log(`\nType of Alert Message : ${messageType}`);
         await page.waitForTimeout(5000);
         await dialog.accept();
+    
 
     })
     await frame.getByText("Try it").click();
