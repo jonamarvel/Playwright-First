@@ -22,7 +22,7 @@ await page.locator("#username").fill('jonamarvel@testleaf.com')
 //await page.fill("#username", "jonamarvel@testleaf.com")
 //await page.locator(".inputLogin").nth(1).fill('XXXXX');
 
-await page.locator("#password").fill('Testlead123')
+await page.locator("#password").fill('Testleaf123')
 
 //To login
 await page.locator('#Login').click();

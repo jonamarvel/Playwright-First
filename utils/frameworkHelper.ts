@@ -5,7 +5,7 @@ type appData = {
     adminUserName:string;
     adminPassword:string;
 }
-export class FrmaeworkHelper{
+export class FrameworkHelper{
 //To load the testdata based on which environment
 
 //Whenever we have static method - 

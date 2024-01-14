@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { SFLoginPage } from "../../../page-objects/sfloginPage_POM";
 import { AppConstants, ToggleStates } from "../../../constants/appConstants";
-import { FrmaeworkHelper } from "../../../utils/frameworkHelper";
+import { FrameworkHelper } from "../../../utils/frameworkHelper";
 import { envConstants } from "../../../constants/envConstants";
 import { URLConstants } from "../../../constants/urlConstants";
 
@@ -11,7 +11,7 @@ test.describe("Salesforce Login",async () => {
     test(`TC001: Verify with valid credentials`,async ({page}) => {
         await page.goto(URLConstants.Login_Page);
         const loginPage = new SFLoginPage(page);
-        const appData = FrmaeworkHelper.loadTestData(envConstants.STAGE);
+        const appData = FrameworkHelper.loadTestData(envConstants.STAGE);
         await loginPage.doLogin(appData.adminUserName,appData.adminPassword); // From Framework Helper
         //await loginPage.doLogin("jonamarvel@testleaf.com","Testleaf123" ) // Hardcoded 
         //await loginPage.fillInUserName("jonamarvel@testleaf.com"); // Accessing method from POM folder to fill username

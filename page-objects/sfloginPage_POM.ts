@@ -1,7 +1,7 @@
 import { test, Locator, Page, expect } from "@playwright/test";
 import { SFBasePage } from "./sfbasePage_POM";
 import { URLConstants } from "../constants/urlConstants";
-import { LoginPage } from "../tests/week6_learning/day11/sfLoginPage";
+//import { LoginPage } from "../tests/week6_learning/day11/sfLoginPage";
 
 export class SFLoginPage extends SFBasePage{
     //blue print - properties
